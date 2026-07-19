@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generator Nota</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ========================= -->
+    <!-- PANEL INPUT -->
+    <!-- ========================= -->
+
+    <div class="sidebar">
+
+        <h2>Generator Nota</h2>
+
+        <div class="input-group">
+            <label>No Nota</label>
+            <input type="text" id="noNota" value="ANM J001">
+        </div>
+
+        <div class="input-group">
+            <label>Nama</label>
+            <input type="text" id="nama">
+        </div>
+
+        <div class="input-group">
+            <label>Nominal</label>
+            <input type="number" id="nominal">
+        </div>
+
+        <div class="input-group">
+            <label>Keperluan</label>
+            <textarea id="keperluan"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Catatan</label>
+            <textarea id="catatan"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Kota</label>
+            <input type="text" id="kota" value="Sidoarjo">
+        </div>
+
+        <div class="input-group">
+            <label>Tanggal</label>
+            <input type="date" id="tanggal">
+        </div>
+
+
+
+        <button id="downloadBtn">
+    Download JPG
+</button>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- PREVIEW -->
+    <!-- ========================= -->
+
+    <div class="preview">
+
+        <div class="nota">
+
+            <header>
+
+                <h1>KUITANSI</h1>
+
+                <div class="header-right">
+
+                    <div>
+                        No :
+                        <span id="previewNo">
+                            ANM J001
+                        </span>
+                    </div>
+
+                    <img src="assets/logo.png" id="previewLogo">
+
+                </div>
+
+            </header>
+
+            <div class="content">
+
+                <div class="row">
+                    <div class="label">Telah diterima dari</div>
+                    <div class="value" id="previewNama"></div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Uang sejumlah</div>
+                    <div class="value" id="previewNominal"></div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Untuk</div>
+                    <div class="value" id="previewKeperluan"></div>
+                </div>
+
+            </div>
+
+            <div class="bottom">
+
+    <div class="note">
+
+        <b>CATATAN :</b>
+
+        <div id="previewCatatan"></div>
+
+    </div>
+
+    <div class="kanan">
+
+        <div class="signature">
+
+            <div id="previewTanggal" class="tanggal"></div>
+
+            <div class="ttd-wrapper">
+
+                <img src="assets/logo-merah.png" id="previewStamp">
+
+                <div class="nama-jepang">
+                    アルフィ アクマリア ハディ
+                </div>
+
+            </div>
+
+            <div class="ttd-line"></div>
+
+            <div class="founder">
+                Founder Aoba no Mori
+            </div>
+
+        </div>
+
+        <div class="alamat">
+
+            <div class="alamat-item">
+                📍 Sidoarjo, Jawa Timur
+            </div>
+
+            <div class="alamat-item">
+                📍 Talun, Blitar, Jawa Timur
+            </div>
+
+            <div class="alamat-item">
+                📍 <i>Online</i>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>
