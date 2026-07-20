@@ -490,3 +490,78 @@ header h1{
     white-space:nowrap;
 
 }
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .container{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .sidebar{
+        width:100%;
+        padding:20px;
+        box-shadow:none;
+    }
+
+    .preview{
+
+        width:100%;
+
+        overflow-x:auto;
+        overflow-y:hidden;
+
+        justify-content:flex-start;
+        align-items:flex-start;
+
+        padding:15px;
+
+    }
+
+    .nota{
+
+        min-width:1550px;
+        width:1550px;
+        height:730px;
+
+        transform:none;
+
+        flex-shrink:0;
+
+    }
+
+}/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width:768px){
+
+    .container{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .preview{
+        overflow-x:auto;
+        justify-content:flex-start;
+        padding:20px;
+    }
+
+    .nota{
+        min-width:1550px;
+        width:1550px;
+        transform:none;
+    }
+
+}
