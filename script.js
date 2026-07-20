@@ -95,30 +95,48 @@ document.querySelectorAll("input, textarea").forEach(item=>{
 
 
 // =======================
-// Download JPG
+// Download PNG HD
 // =======================
 
 document
 .getElementById("downloadBtn")
-.addEventListener("click",()=>{
+.addEventListener("click", async () => {
 
-    const nota=document.querySelector(".nota");
+    const nota = document.querySelector(".nota");
 
-    html2canvas(nota,{
+    // Simpan style lama
+    const oldTransform = nota.style.transform;
+    const oldWidth = nota.style.width;
+    const oldHeight = nota.style.height;
 
-        scale:5,
+    // Paksa ukuran desktop
+    nota.style.transform = "none";
+    nota.style.width = "1550px";
+    nota.style.height = "730px";
 
-        useCORS:true,
+    // Tunggu browser render ulang
+    await new Promise(resolve => setTimeout(resolve, 100));
 
-        backgroundColor:null
+    html2canvas(nota, {
+        scale: 3,
+        useCORS: true,
+        backgroundColor: "#F8F3EA",
+        width: 1550,
+        height: 730,
+        windowWidth: 1550,
+        windowHeight: 730
+    }).then(canvas => {
 
-    }).then(canvas=>{
+        // Balikin style semula
+        nota.style.transform = oldTransform;
+        nota.style.width = oldWidth;
+        nota.style.height = oldHeight;
 
-        const link=document.createElement("a");
+        const link = document.createElement("a");
 
-        link.download="Kuitansi.jpg";
+        link.download = "Kuitansi.png";
 
-        link.href=canvas.toDataURL("image/jpeg",1);
+        link.href = canvas.toDataURL("image/png");
 
         link.click();
 
